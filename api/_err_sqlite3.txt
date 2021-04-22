@@ -1,0 +1,150 @@
+===============================
+      ! ERRO DO SQLITE3 !
+===============================
+
+          Solução:
+
+$ npm uninstall sqlite3
+$ npm cache clean --force
+$ npm install sqlite3
+
+================================
+
+Angular CLI: 11.2.10
+Node: 14.16.1
+OS: win32 x64
+
+Angular:
+...
+Ivy Workspace:
+
+Package                      Version
+------------------------------------------------------
+@angular-devkit/architect    0.1102.10 (cli-only)  
+@angular-devkit/core         11.2.10 (cli-only)    
+@angular-devkit/schematics   11.2.10 (cli-only)    
+@schematics/angular          11.2.10 (cli-only)    
+@schematics/update           0.1102.10 (cli-only)
+
+======================================================================================
+======================================================================================
+======================================================================================
+
+> Exemplo de erro:
+
+user@win ~/Downloads/testes_angular/api
+$ npm start
+
+> alurapic@1.0.0 start C:\Users\xxx\Downloads\testes_angular\api  
+> node server.js
+
+internal/modules/cjs/loader.js:883
+  throw err;
+  ^
+
+Error: Cannot find module 'C:\Users\xxx\Downloads\testes_angular\api\node_modules\sqlite3\lib\binding\node-v83-win32-x64\node_sqlite3.node'     
+Require stack:
+- C:\Users\xxx\Downloads\testes_angular\api\node_modules\sqlite3\lib\sqlite3.js
+- C:\Users\xxx\Downloads\testes_angular\api\config\database.js    
+- C:\Users\xxx\Downloads\testes_angular\api\config\express.js     
+- C:\Users\xxx\Downloads\testes_angular\api\server.js
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:880:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:725:27)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (C:\Users\xxx\Downloads\testes_angular\api\node_modules\sqlite3\lib\sqlite3.js:4:15)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10) 
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\xxx\\Downloads\\testes_angular\\api\\node_modules\\sqlite3\\lib\\sqlite3.js',
+    'C:\\Users\\xxx\\Downloads\\testes_angular\\api\\config\\database.js',
+    'C:\\Users\\xxx\\Downloads\\testes_angular\\api\\config\\express.js',
+    'C:\\Users\\xxx\\Downloads\\testes_angular\\api\\server.js'   
+  ]
+}
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! alurapic@1.0.0 start: `node server.js`
+npm ERR! Exit status 1
+npm ERR!
+npm ERR! Failed at the alurapic@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\xxx\AppData\Roaming\npm-cache\_logs\2021-04-22T03_59_04_119Z-debug.log
+
+user@win ~/Downloads/testes_angular/api        
+$ npm i sqlite3
+npm WARN deprecated node-pre-gyp@0.11.0: Please upgrade to @mapbox/node-pre-gyp: the non-scoped node-pre-gyp package is deprecated and only the @mapbox scoped package will recieve updates in the future
+
+> sqlite3@4.2.0 install C:\Users\xxx\Downloads\testes_angular\api\node_modules\sqlite3
+> node-pre-gyp install --fallback-to-build
+
+node-pre-gyp WARN Using request for node-pre-gyp https download
+node-pre-gyp WARN Tried to download(403): https://mapbox-node-binary.s3.amazonaws.com/sqlite3/v4.2.0/node-v83-win32-x64.tar.gz
+node-pre-gyp WARN Pre-built binaries not found for sqlite3@4.2.0 and node@14.16.1 (node-v83 ABI, unknown) (falling back to source compile with node-gyp)    
+gyp ERR! find VS
+gyp ERR! find VS msvs_version not set from command line or npm config
+gyp ERR! find VS VCINSTALLDIR not set, not running in VS Command Prompt       
+gyp ERR! find VS could not use PowerShell to find Visual Studio 2017 or newer 
+gyp ERR! find VS looking for Visual Studio 2015
+gyp ERR! find VS - not found
+gyp ERR! find VS not looking for VS2013 as it is only supported up to Node.js 
+8
+gyp ERR! find VS
+gyp ERR! find VS **************************************************************
+gyp ERR! find VS You need to install the latest version of Visual Studio      
+gyp ERR! find VS including the "Desktop development with C++" workload.       
+gyp ERR! find VS For more information consult the documentation at:
+gyp ERR! find VS https://github.com/nodejs/node-gyp#on-windows
+gyp ERR! find VS **************************************************************
+gyp ERR! find VS
+gyp ERR! configure error
+gyp ERR! stack Error: Could not find any Visual Studio installation to use    
+gyp ERR! stack     at VisualStudioFinder.fail (C:\Program Files\nodejs\node_modules\npm\node_modules\node-gyp\lib\find-visualstudio.js:121:47)
+gyp ERR! stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\node-gyp\lib\find-visualstudio.js:74:16
+gyp ERR! stack     at VisualStudioFinder.findVisualStudio2013 (C:\Program Files\nodejs\node_modules\npm\node_modules\node-gyp\lib\find-visualstudio.js:351:14)
+gyp ERR! stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\node-gyp\lib\find-visualstudio.js:70:14
+gyp ERR! stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\node-gyp\lib\find-visualstudio.js:372:16
+gyp ERR! stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\node-gyp\lib\util.js:54:7
+gyp ERR! stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\node-gyp\lib\util.js:33:16
+gyp ERR! stack     at ChildProcess.exithandler (child_process.js:315:5)       
+gyp ERR! stack     at ChildProcess.emit (events.js:315:20)
+gyp ERR! stack     at maybeClose (internal/child_process.js:1048:16)
+gyp ERR! System Windows_NT 10.0.19041
+gyp ERR! command "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\node_modules\\node-gyp\\bin\\node-gyp.js" "configure" 
+"--fallback-to-build" "--module=C:\\Users\\xxx\\Downloads\\testes_angular\\api\\node_modules\\sqlite3\\lib\\binding\\node-v83-win32-x64\\node_sqlite3.node" "--module_name=node_sqlite3" "--module_path=C:\\Users\\xxx\\Downloads\\testes_angular\\api\\node_modules\\sqlite3\\lib\\binding\\node-v83-win32-x64" "--napi_version=7" "--node_abi_napi=napi" "--napi_build_version=0" "--node_napi_label=node-v83"
+gyp ERR! cwd C:\Users\xxx\Downloads\testes_angular\api\node_modules\sqlite3
+gyp ERR! node -v v14.16.1
+gyp ERR! node-gyp -v v5.1.0
+gyp ERR! not ok
+node-pre-gyp ERR! build error
+node-pre-gyp ERR! stack Error: Failed to execute 'C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\node_modules\node-gyp\bin\node-gyp.js configure --fallback-to-build --module=C:\Users\xxx\Downloads\testes_angular\api\node_modules\sqlite3\lib\binding\node-v83-win32-x64\node_sqlite3.node --module_name=node_sqlite3 --module_path=C:\Users\xxx\Downloads\testes_angular\api\node_modules\sqlite3\lib\binding\node-v83-win32-x64 --napi_version=7 --node_abi_napi=napi --napi_build_version=0 --node_napi_label=node-v83' (1)
+node-pre-gyp ERR! stack     at ChildProcess.<anonymous> (C:\Users\xxx\Downloads\testes_angular\api\node_modules\sqlite3\node_modules\node-pre-gyp\lib\util\compile.js:83:29)
+node-pre-gyp ERR! stack     at ChildProcess.emit (events.js:315:20)
+node-pre-gyp ERR! stack     at maybeClose (internal/child_process.js:1048:16) 
+node-pre-gyp ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:288:5)
+node-pre-gyp ERR! System Windows_NT 10.0.19041
+node-pre-gyp ERR! command "C:\\Program Files\\nodejs\\node.exe" "C:\\Users\\xxx\\Downloads\\testes_angular\\api\\node_modules\\sqlite3\\node_modules\\node-pre-gyp\\bin\\node-pre-gyp" "install" "--fallback-to-build"        
+node-pre-gyp ERR! cwd C:\Users\xxx\Downloads\testes_angular\api\node_modules\sqlite3
+node-pre-gyp ERR! node -v v14.16.1
+node-pre-gyp ERR! node-pre-gyp -v v0.11.0
+node-pre-gyp ERR! not ok
+Failed to execute 'C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\node_modules\node-gyp\bin\node-gyp.js configure --fallback-to-build --module=C:\Users\xxx\Downloads\testes_angular\api\node_modules\sqlite3\lib\binding\node-v83-win32-x64\node_sqlite3.node --module_name=node_sqlite3 --module_path=C:\Users\xxx\Downloads\testes_angular\api\node_modules\sqlite3\lib\binding\node-v83-win32-x64 --napi_version=7 --node_abi_napi=napi --napi_build_version=0 --node_napi_label=node-v83' (1)
+npm WARN alurapic@1.0.0 No description
+npm WARN alurapic@1.0.0 No repository field.
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! sqlite3@4.2.0 install: `node-pre-gyp install --fallback-to-build`    
+npm ERR! Exit status 1
+npm ERR!
+npm ERR! Failed at the sqlite3@4.2.0 install script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\xxx\AppData\Roaming\npm-cache\_logs\2021-04-22T04_04_34_786Z-debug.log
